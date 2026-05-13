@@ -52,7 +52,7 @@ Contains the complete record of each co-creation session.
 | `dialogue_id` | String | Unique session ID (e.g., "001") |
 | `dialogue_history` | Array | List of utterances. Each contains `timestamp`, and `utt` (Text with `[DialogueAct]`). <br><br>**Note:** If `utt` is `dialogue_start` or `dialogue_end`, it indicates the start or end time of the dialogue. These are omitted if the exact time is unknown. |
 | `stories` | Object | Contains `story1`, `story2`, and `story3`. <br><br>Each has `sentences` (Array) and two completion flags: `is_completed(Leader)` and `is_completed(Author)` (Boolean). <br><br>**Note:** `is_completed(Leader)` indicates whether the Leader marked the story as finished. `is_completed(Author)` indicates whether the paper's authors deemed it finished (added to account for cases where the Leader forgot to check the completion box). |
-| `edit_log` | Array | History of editing actions (e.g., `write_story_1_line_1`, `complete_story_1`, `delete_...`) with `timestamp`. <br><br>**Note:** If the action is `dialogue_start` or `dialogue_end`, it indicates the start or end time of the dialogue. These are omitted if the exact time is unknown. |
+| `edit_log` | Array | History of editing actions (e.g., `write_story_1_line_1`, `complete_story_1`, `delete_...`) with `timestamp`. <br><br>**Note:** Actions like `write_othercells` indicate that the Leader wrote outside the designated story entry area. If the action is `dialogue_start` or `dialogue_end`, it indicates the start or end time of the dialogue. These are omitted if the exact time is unknown. |
 | `participants` | Array | Post-survey evaluations from both users. Includes `user_id`, `partner_id`, `Role` (Leader/Supporter), `Contribution ratio`, and Likert-scale evaluations in postsurveys. |
 
 
